@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _print_rev - prints a string, in reverse,
+ * print_rev - prints a string, in reverse,
  * followed by a new line
  * @s: char
  * Return: void
  */
-void _puts(char *s)
+void print_rev(char *s)
 {
 	int count = 0;
 
