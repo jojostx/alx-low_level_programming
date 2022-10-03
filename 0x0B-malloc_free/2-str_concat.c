@@ -52,7 +52,8 @@ char *str_concat(char *s1, char *s2)
 		i++;
 		a++;
 	}
-	ptr_str[size] = '\0';
+
+	ptr_str[size - 1] = '\0';
 
 	return (ptr_str);
 }
