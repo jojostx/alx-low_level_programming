@@ -33,7 +33,7 @@ char *str_concat(char *s1, char *s2)
 	int a = 0;
 	int i = 0;
 
-	size = _strlen(s1) +  _strlen(s2);
+	size = _strlen(s1) +  _strlen(s2) + 1;
 
 	ptr_str = (char *)malloc(sizeof(char) * size);
 
@@ -52,6 +52,7 @@ char *str_concat(char *s1, char *s2)
 		i++;
 		a++;
 	}
+	ptr_str[i] = '\0';
 
 	return (ptr_str);
 }
