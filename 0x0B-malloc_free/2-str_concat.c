@@ -29,11 +29,11 @@ int _strlen(char *str)
 char *str_concat(char *s1, char *s2)
 {
 	char *ptr_str;
-	int size;
-	int a = 0;
-	int i = 0;
+	int size, l1, l2, a, i;
 
-	size = _strlen(s1) +  _strlen(s2) + 1;
+	l1 = _strlen(s1);
+	l2 = _strlen(s2);
+	size = l1 + l2 + 1;
 
 	ptr_str = (char *)malloc(sizeof(char) * size);
 
@@ -43,18 +43,13 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	}
 
-	while (s1[i] != '\0')
-	{
-		ptr_str[i] = s1[i];
-		i++;
-	}
+	for (a = 0; a < l1; a++)
+		ptr_str[a] = s1[a];
 
-	while (s2[a] != '\0')
-	{
-		ptr_str[i] = s2[a];
-		i++;
-		a++;
-	}
+	i = l2;
+
+	for (l2 = 0; l2 <= i; l2++, a++)
+		ptr_str[a] = s2[l2];
 
 	return (ptr_str);
 }
